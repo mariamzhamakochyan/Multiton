@@ -11,8 +11,8 @@ class Multiton:
         else:
             cls.ref += 1
             if cls.ref > cls.max_instances:
-                cls.ref = 0
-                return cls.instances[cls.ref]
+                cls.ref = 1
+                return cls.instances[cls.ref - 1]
             return cls.instances[cls.ref - 1]            
 
     def __init__(self, *args, **kwargs):
@@ -29,3 +29,4 @@ instance7 = Multiton()
 print(instance1 is instance4)
 print(instance2 is instance5) 
 print(instance3 is instance6) 
+print(instance1 is instance7)
