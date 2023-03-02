@@ -10,7 +10,7 @@ class Multiton:
             return instance
         else:
             cls.ref += 1
-            if cls.ref > 3:
+            if cls.ref > cls.max_instances:
                 cls.ref = 0
                 return cls.instances[cls.ref]
             return cls.instances[cls.ref - 1]            
